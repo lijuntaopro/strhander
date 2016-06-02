@@ -2,6 +2,7 @@ package lijuntao.strhander.utils;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.Set;
 
 public final class PrintMap {
 	public static final void printMap(Map<String,String[]> map){
@@ -69,5 +70,67 @@ public final class PrintMap {
 			buf.append("</sql>\n");
 		}
 		System.out.println(buf.toString());
+	}
+	
+	public static final void printSqlStrSimple(Map<String,String[]> map,String subPrefix,String subSuffix,String addPrefix,String addSuffix,int maxLenthg){
+		StringBuffer buffer = new StringBuffer();
+		Set<Entry<String,String[]>> set = map.entrySet();
+		for(Entry<String,String[]> entry:set){
+			String[] strs = entry.getValue();
+			buffer.append("<sql id=\""+entry.getKey()+"\">\n");
+			for(String str:strs){
+					str = strPrefixAddOrRemove(strPrefixAddOrRemove(str,subPrefix,false),addPrefix,true);
+					str = strSuffixAddOrRemove(strSuffixAddOrRemove(str,subSuffix,false),addSuffix,true);
+					str = substringBylength(str,maxLenthg);
+					buffer.append(str+",");
+			}
+			buffer.append("</sql>\n");
+		}
+		System.out.println(buffer.toString());
+	}
+	
+	public static String strPrefixAddOrRemove(String str,String addprefix,boolean b){
+		if(str==null||str.length()==0||addprefix==null||addprefix.length()==0)
+			return str;
+		if(b){
+			return addprefix + str;
+		}else{
+			int i = str.indexOf(addprefix);
+			if(i!=-1)
+				str = str.substring(i);
+			return str;
+		}
+	}
+	
+	public static String strSuffixAddOrRemove(String str,String addSuffix,boolean b){
+		if(str==null||str.length()==0||addSuffix==null||addSuffix.length()==0)
+			return str;
+		if(b){
+			return str + addSuffix;
+		}else{
+			int i = str.indexOf(addSuffix);
+			if(i!=-1)
+				str = str.substring(0,i);
+			return str;
+		}
+	}
+	
+	public String getPrefixOrSuffix(String str,String prefixOrSuffix,boolean b){
+		if(str==null||str.length()==0||prefixOrSuffix==null||prefixOrSuffix.length()==0)
+			return str;
+		int i = str.indexOf(prefixOrSuffix);
+		if(i!=-1){
+			if(b)
+				str = str.substring(0,i);
+			else
+				str = str.substring(i);
+		}
+		return str;
+	}
+	
+	public static String substringBylength(String str ,int length){
+		if(str==null||length<1||str.length()<length)
+			return str;
+		return str.substring(0, length);
 	}
 }
