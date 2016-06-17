@@ -274,4 +274,14 @@ public class CharsUtils {
 		}
 		return map;
 	}
+	
+	public static final boolean contain(char[] cs,char[] cs2){
+		if(cs==null||cs.length==0||cs2==null||cs2.length==0||cs.length<cs2.length)
+			return false;
+		for(int i=0;i<cs.length-cs2.length+1;i++)
+			if(cs[i]==cs[i])
+				if(compare(cs,i+1,cs2,1))
+					return true;
+		return false;
+	}
 }

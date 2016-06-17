@@ -9,6 +9,10 @@ public class CharsExt {
 			this.size = size;
 	}
 	
+	public CharsExt() {
+		
+	}
+
 	public void add(char[] cs,int begin,int size){
 		if(mycs==null)
 			mycs = new char[this.size];
@@ -31,7 +35,8 @@ public class CharsExt {
 	
 	public char[] toArrayChar(){
 		char[] cs = new char[index];
-		System.arraycopy(mycs,0,cs,0,index);
+		if(mycs!=null)
+			System.arraycopy(mycs,0,cs,0,index);
 		return cs;
 	}
 	
