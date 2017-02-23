@@ -18,9 +18,9 @@ public class CharsExt {
 			mycs = new char[this.size];
 		if(cs==null||cs.length==0||size<1||begin+size>cs.length){
 			if(size>0)
-				System.out.println("CharsExt.add参数出错");
+				System.out.println("CharsExt.add鍙傛暟鍑洪敊");
 			else
-				System.out.println("CharsExt.add参数size="+size+"操作无效");
+				System.out.println("CharsExt.add鍙傛暟size="+size+"鎿嶄綔鏃犳晥");
 			return;
 		}
 		for(;size>0;size--){

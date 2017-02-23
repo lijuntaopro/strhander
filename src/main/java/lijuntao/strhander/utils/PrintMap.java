@@ -16,7 +16,7 @@ public final class PrintMap {
 					prefix = strs[0].substring(0,i);
 			}else
 				continue;
-//			buf.append("ÊµÌå:"+entry.getKey()+";ÊôĞÔ¸öÊı:"+strs.length+"\n");
+//			buf.append("å®ä½“:"+entry.getKey()+";å±æ€§ä¸ªæ•°:"+strs.length+"\n");
 			buf.append("<sql id=\""+prefix+"\">\n");
 			for(int j=0;j<strs.length;j++){
 				int k = strs[j].indexOf('_');
@@ -51,7 +51,7 @@ public final class PrintMap {
 					prefix = strs[0].substring(0,i);
 			}else
 				continue;
-//			buf.append("ÊµÌå:"+entry.getKey()+";ÊôĞÔ¸öÊı:"+strs.length+"\n");
+//			buf.append("å®ä½“:"+entry.getKey()+";å±æ€§ä¸ªæ•°:"+strs.length+"\n");
 			buf.append("<sql id=\""+prefix+"_simple\">\n");
 			
 			for(int j=0;j<strs.length;j++){

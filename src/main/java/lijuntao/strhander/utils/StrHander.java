@@ -20,7 +20,7 @@ public class StrHander {
 		try {
 			reader = new InputStreamReader(new FileInputStream(fileName));
 		} catch (Exception e) {
-			throw new RuntimeException("ÕÒ²»µ½ÎÄ¼ş");
+			throw new RuntimeException("æ‰¾ä¸åˆ°æ–‡ä»¶");
 		}
 	}
 	public void setBufferSize(int size){
@@ -39,7 +39,7 @@ public class StrHander {
 				charsExt.add(as, 0, i);
 			}
 		} catch (IOException e) {
-			throw new RuntimeException("²»¿É¶Á");
+			throw new RuntimeException("ä¸å¯è¯»");
 		}
 		cs = charsExt.toArrayChar();
 		int[] indexs = CharsUtils.findAllIndexs(cs, parentBegin);
@@ -60,7 +60,7 @@ public class StrHander {
 				buffer.append(as);
 			}
 		} catch (IOException e) {
-			throw new RuntimeException("²»¿É¶Á");
+			throw new RuntimeException("ä¸å¯è¯»");
 		}
 		System.out.println(buffer.toString());
 		cs = buffer.toString().toCharArray();

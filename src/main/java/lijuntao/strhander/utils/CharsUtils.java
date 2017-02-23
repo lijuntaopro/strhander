@@ -7,26 +7,26 @@ import java.util.Map;
 /**
  * 
  * @author lijuntao
- * @date 2016-6-1 ÏÂÎç2:03:30
- * ÓÃÓÚ´¦Àí×Ö·ûÊı×éµÄ·½·¨
+ * @date 2016-6-1 ä¸‹åˆ2:03:30
+ * ç”¨äºå¤„ç†å­—ç¬¦æ•°ç»„çš„æ–¹æ³•
  */
 public class CharsUtils {
 	private final static char[] FINAL_CS = new char[0];
 	private static final int[] pIndexs = new int[0];
 	/**
-	 * ÔÚÔ´Êı×éµÄÄ³Ò»¶ÎÊı×éÖĞ£¬½ØÈ¡Õâ¶ÎÊı×éÖĞ£¬ÓÉÁ½¸öÆ¥ÅäÊı×éÖĞµÄËùÓĞµÄ³¤¶È£¬·µ»ØÕâĞ©×Ö·û´®
+	 * åœ¨æºæ•°ç»„çš„æŸä¸€æ®µæ•°ç»„ä¸­ï¼Œæˆªå–è¿™æ®µæ•°ç»„ä¸­ï¼Œç”±ä¸¤ä¸ªåŒ¹é…æ•°ç»„ä¸­çš„æ‰€æœ‰çš„é•¿åº¦ï¼Œè¿”å›è¿™äº›å­—ç¬¦ä¸²
 	 *@Author Administrator
-	 *@Date 2016-6-1 ÏÂÎç12:04:08
-	 *@param cs Ô´Êı×é
-	 *@param begin Ô´Êı×é¿ªÊ¼Æ«ÒÆÁ¿
-	 *@param end Ô´Êı×é½áÊøÆ«ÒÆÁ¿
-	 *@param beginChars Âú×ã¿ªÊ¼½ØÈ¡µÄ×Ö·ûÊı×é
-	 *@param endChars  Âú×ã×îºó½ØÈ¡µÄ×Ö·ûÊı×é
-	 *@Retuen String[]  ·µ»ØÂú×ãÌõ¼şµÄÊı×é
+	 *@Date 2016-6-1 ä¸‹åˆ12:04:08
+	 *@param cs æºæ•°ç»„
+	 *@param begin æºæ•°ç»„å¼€å§‹åç§»é‡
+	 *@param end æºæ•°ç»„ç»“æŸåç§»é‡
+	 *@param beginChars æ»¡è¶³å¼€å§‹æˆªå–çš„å­—ç¬¦æ•°ç»„
+	 *@param endChars  æ»¡è¶³æœ€åæˆªå–çš„å­—ç¬¦æ•°ç»„
+	 *@Retuen String[]  è¿”å›æ»¡è¶³æ¡ä»¶çš„æ•°ç»„
 	 */
 	public static final String[] getProperty(char[] cs,int begin,int end,char[] beginChars,char[] endChars){
 		if(cs==null||beginChars==null||endChars==null){
-			System.out.println("Ä³¸öÊı×éÎª¿Õ");
+			System.out.println("æŸä¸ªæ•°ç»„ä¸ºç©º");
 			return null;
 		}
 		List<String> list = new ArrayList<String>();
@@ -45,9 +45,9 @@ public class CharsUtils {
 	}
 	
 	/**
-	 * ½ØÈ¡Ô´Êı×éÖĞ£¬ÔÚÆ«ÒÆºó£¬È¡Á½¸ö×Ö·ûÖ®¼äµÄ³¤¶È,¸³ÓèÄ¿±êÊı×é
+	 * æˆªå–æºæ•°ç»„ä¸­ï¼Œåœ¨åç§»åï¼Œå–ä¸¤ä¸ªå­—ç¬¦ä¹‹é—´çš„é•¿åº¦,èµ‹äºˆç›®æ ‡æ•°ç»„
 	 *@Author Administrator
-	 *@Date 2016-6-1 ÏÂÎç1:58:13
+	 *@Date 2016-6-1 ä¸‹åˆ1:58:13
 	 *@param cs
 	 *@param offset
 	 *@param begin
@@ -57,7 +57,7 @@ public class CharsUtils {
 	 */
 	public static final int subCharsToChars(final char[] cs,int offset,char begin,char end,final char[] target){
 		if(cs==null||cs.length==0||offset>=cs.length)
-			System.out.println("Ô´Êı×éÎª¿Õ,»òÕßÊı×é³¤¶È´óÓÚÆ«ÒÆÁ¿");
+			System.out.println("æºæ•°ç»„ä¸ºç©º,æˆ–è€…æ•°ç»„é•¿åº¦å¤§äºåç§»é‡");
 		else{
 			int beginindex = -1;
 			boolean foundbegin = false;
@@ -79,9 +79,9 @@ public class CharsUtils {
 		return -1;
 	}
 	/**
-	 * ½ØÈ¡Ô´Êı×éÖĞ£¬ÔÚÆ«ÒÆºó£¬È¡Á½¸ö×Ö·ûÖ®¼äµÄ³¤¶È
+	 * æˆªå–æºæ•°ç»„ä¸­ï¼Œåœ¨åç§»åï¼Œå–ä¸¤ä¸ªå­—ç¬¦ä¹‹é—´çš„é•¿åº¦
 	 *@Author Administrator
-	 *@Date 2016-6-1 ÏÂÎç1:56:29
+	 *@Date 2016-6-1 ä¸‹åˆ1:56:29
 	 *@param cs
 	 *@param offset
 	 *@param begin
@@ -90,7 +90,7 @@ public class CharsUtils {
 	 */
 	public static final char[] subCharsToChars(final char[] cs,int offset,char begin,char end){
 		if(cs==null||cs.length==0||offset>=cs.length)
-			System.out.println("Ô´Êı×éÎª¿Õ,»òÕßÊı×é³¤¶È´óÓÚÆ«ÒÆÁ¿");
+			System.out.println("æºæ•°ç»„ä¸ºç©º,æˆ–è€…æ•°ç»„é•¿åº¦å¤§äºåç§»é‡");
 		else{
 			int beginindex = -1;
 			boolean foundbegin = false;
@@ -113,14 +113,14 @@ public class CharsUtils {
 		return FINAL_CS;
 	}
 	/**
-	 * ½ØÈ¡Ô´Êı×éÔÚÆ«ÒÆÁ¿ºó£¬µÈÓÚÁîÒ»×Ö·ûµÄ³¤¶È,·ÅÈëÄ¿±êÊı×éÖĞ
+	 * æˆªå–æºæ•°ç»„åœ¨åç§»é‡åï¼Œç­‰äºä»¤ä¸€å­—ç¬¦çš„é•¿åº¦,æ”¾å…¥ç›®æ ‡æ•°ç»„ä¸­
 	 *@Author Administrator
-	 *@Date 2016-6-1 ÏÂÎç1:52:33
+	 *@Date 2016-6-1 ä¸‹åˆ1:52:33
 	 *@param cs
 	 *@param begin
 	 *@param end
 	 *@param target
-	 *@return ·µ»Ø½ØÈ¡µÄ³¤¶È
+	 *@return è¿”å›æˆªå–çš„é•¿åº¦
 	 */
 	public static final int subChars(final char[] cs,int begin,char end,final char[] target){
 		if(cs==null||cs.length<=begin)
@@ -129,7 +129,7 @@ public class CharsUtils {
 			if(cs[k]==end){
 				int length = k - begin+1;
 				if(target.length<length){
-					System.out.println("Ä¿±êÊı×éµÄ³¤¶È²»¹»");
+					System.out.println("ç›®æ ‡æ•°ç»„çš„é•¿åº¦ä¸å¤Ÿ");
 					return -1;
 				}
 				System.arraycopy(cs, begin, target, 0, length);
@@ -139,9 +139,9 @@ public class CharsUtils {
 		return -1;
 	}
 	/**
-	 * ½ØÈ¡Ô´Êı×éÔÚÆ«ÒÆÁ¿ºó£¬µÈÓÚÁîÒ»×Ö·ûµÄ³¤¶È
+	 * æˆªå–æºæ•°ç»„åœ¨åç§»é‡åï¼Œç­‰äºä»¤ä¸€å­—ç¬¦çš„é•¿åº¦
 	 *@Author Administrator
-	 *@Date 2016-6-1 ÏÂÎç1:51:23
+	 *@Date 2016-6-1 ä¸‹åˆ1:51:23
 	 *@param cs
 	 *@param begin
 	 *@param end
@@ -163,19 +163,19 @@ public class CharsUtils {
 	/**
 	 * 
 	 *@Author Administrator
-	 *@Date 2016-6-1 ÏÂÎç1:39:12
-	 *@param sources Ô´Êı×é
-	 *@param offset  Ô´Êı×éµÄÆ«ÒÆÁ¿
-	 *@param cs  Æ¥ÅäÊı×é
-	 *@Retuen int ·µ»ØÆ¥ÅäÊı×éÔÚÔ´Êı×éµÄÆ«ÒÆÁ¿£¬·ñÔòÎª-1
+	 *@Date 2016-6-1 ä¸‹åˆ1:39:12
+	 *@param sources æºæ•°ç»„
+	 *@param offset  æºæ•°ç»„çš„åç§»é‡
+	 *@param cs  åŒ¹é…æ•°ç»„
+	 *@Retuen int è¿”å›åŒ¹é…æ•°ç»„åœ¨æºæ•°ç»„çš„åç§»é‡ï¼Œå¦åˆ™ä¸º-1
 	 */
 	public static final int findIndex(char[] sources,int offset,char[] cs){
 		if(sources==null||sources.length==0||cs==null||cs.length==0){
-			System.out.println("²ÎÊıÊı×éÄ³¸öÎª¿Õ");
+			System.out.println("å‚æ•°æ•°ç»„æŸä¸ªä¸ºç©º");
 			return -1; 
 		}
 		if(sources.length<=offset||offset<0){
-			System.out.println("Æ«ÒÆÁ¿³¬³ö·¶Î§,offset="+offset);
+			System.out.println("åç§»é‡è¶…å‡ºèŒƒå›´,offset="+offset);
 			return -1;
 		}
 		
@@ -191,17 +191,17 @@ public class CharsUtils {
 	/**
 	 * 
 	 *@Author Administrator
-	 *@Date 2016-6-1 ÏÂÎç1:48:08
+	 *@Date 2016-6-1 ä¸‹åˆ1:48:08
 	 *@param sources
 	 *@param i
 	 *@param cs
 	 *@param j
 	 *@Retuen boolean
-	 *±È½ÏÁ½¸öÊı×é£¬Æ¥ÅäÊı×éÔÚÔ´Êı×éÖĞ
+	 *æ¯”è¾ƒä¸¤ä¸ªæ•°ç»„ï¼ŒåŒ¹é…æ•°ç»„åœ¨æºæ•°ç»„ä¸­
 	 */
 	public static final boolean compare(char[] sources, int i, char[] cs, int j) {
 		if(cs==null||cs.length==0||cs.length<j-1||sources.length-i<cs.length-j){
-			System.out.println("compare·½·¨²ÎÊı³ö´í");
+			System.out.println("compareæ–¹æ³•å‚æ•°å‡ºé”™");
 			return false;
 		}
 		for(;j<cs.length;j++,i++){
@@ -214,13 +214,13 @@ public class CharsUtils {
 	public final static int[] findAllIndexs(char[] source,char[] target){
 		int[] pIndexs = new int[2];
 		int pIndexsLength = pIndexs.length;
-		//´ú±íÇ°Ò»¸öµÄÆ«ÒÆÁ¿
+		//ä»£è¡¨å‰ä¸€ä¸ªçš„åç§»é‡
 		int k1 = -1;
-		//´ú±í·¢ÏÖ´æ·ÅµÄÊı×éÏÂ±ê
+		//ä»£è¡¨å‘ç°å­˜æ”¾çš„æ•°ç»„ä¸‹æ ‡
 		int j = 0;
 		int k = 0;
 		while(k>=0){
-			//²éÕÒÇ°×º£¨×Ö·ûÊı×é£©µÄÏÂ±ê£¬¼ÇÂ¼ÔÚÏÂ±êÊıÖµ
+			//æŸ¥æ‰¾å‰ç¼€ï¼ˆå­—ç¬¦æ•°ç»„ï¼‰çš„ä¸‹æ ‡ï¼Œè®°å½•åœ¨ä¸‹æ ‡æ•°å€¼
 			pIndexs[j++] = k1 = k = CharsUtils.findIndex(source,++k1,target);
 			if(j>=pIndexsLength){
 				int[] pIndexs_2 = new int[pIndexsLength*2];
@@ -245,25 +245,25 @@ public class CharsUtils {
 		for(int m=0;m<indexs.length;m++){
 			int pIndex = indexs[m];
 			int pIndex_next = indexs[m+1];
-			//ÊµÌåÏÂ±ê¿ªÊ¼Îª-1Ê±£¬´ú±íÍùºóµÄ¶¼ÊÇ-1,Õı³£ĞòÁĞ£º´ÓĞ¡µ½´ó£¬»òÕßÔÙÌí¼ÓÒ»¸ö-1½áÎ²£¬·ñÔòÊÇ´íµÄ
+			//å®ä½“ä¸‹æ ‡å¼€å§‹ä¸º-1æ—¶ï¼Œä»£è¡¨å¾€åçš„éƒ½æ˜¯-1,æ­£å¸¸åºåˆ—ï¼šä»å°åˆ°å¤§ï¼Œæˆ–è€…å†æ·»åŠ ä¸€ä¸ª-1ç»“å°¾ï¼Œå¦åˆ™æ˜¯é”™çš„
 			if(pIndex==-1)
 				break;
 			if(pIndex_next<=pIndex)
 				break;
-			//ÇÒ½áÊø×Ö·ûĞ¡ÓÚÏÂÒ»¸ö¿ªÊ¼×Ö·û
+			//ä¸”ç»“æŸå­—ç¬¦å°äºä¸‹ä¸€ä¸ªå¼€å§‹å­—ç¬¦
 			if(endIndex<=pIndex_next)
-				//²éÕÒºó×º£¨×Ö·ûÊı×é£©µÄÏÂ±ê£¬Æä¿ªÊ¼²éÕÒµÄÆ«ÒÆÁ¿Îª£ºÇ°×ºÏÂ±ê+Ç°×º³¤¶È
+				//æŸ¥æ‰¾åç¼€ï¼ˆå­—ç¬¦æ•°ç»„ï¼‰çš„ä¸‹æ ‡ï¼Œå…¶å¼€å§‹æŸ¥æ‰¾çš„åç§»é‡ä¸ºï¼šå‰ç¼€ä¸‹æ ‡+å‰ç¼€é•¿åº¦
 				endIndex = CharsUtils.findIndex(cs,pIndex+prefix_parent_length,parentEnd);
 			else
 				continue;
 			System.out.println("endIndex="+endIndex);
 			if(endIndex>pIndex){
-				//½ØÈ¡×Ö·û´®£¬¿ªÊ¼Îª¿ªÊ¼Êı×éÏÂ±ê+Êı×é³¤¶È£¬³¤¶ÈÎª½áÊøÊı×éÏÂ±ê-£¨Êı×éÏÂ±ê+Êı×é³¤¶È£©
+				//æˆªå–å­—ç¬¦ä¸²ï¼Œå¼€å§‹ä¸ºå¼€å§‹æ•°ç»„ä¸‹æ ‡+æ•°ç»„é•¿åº¦ï¼Œé•¿åº¦ä¸ºç»“æŸæ•°ç»„ä¸‹æ ‡-ï¼ˆæ•°ç»„ä¸‹æ ‡+æ•°ç»„é•¿åº¦ï¼‰
 				modelName = new String(cs,pIndex+prefix_parent_length,endIndex-pIndex-prefix_parent_length);
 			}
-			//ÊôĞÔ¿ªÊ¼ÏÂ±ê
+			//å±æ€§å¼€å§‹ä¸‹æ ‡
 			int propertybeginIndex = endIndex + suffix_parent_length;
-			//×îºóÒ»¸öÊµÌå£¬´Ó¿ªÊ¼ÏÂ±ê£¬µ½×Ü×Ö·û³öÊı×éµÄ³¤¶È²éÕÒ
+			//æœ€åä¸€ä¸ªå®ä½“ï¼Œä»å¼€å§‹ä¸‹æ ‡ï¼Œåˆ°æ€»å­—ç¬¦å‡ºæ•°ç»„çš„é•¿åº¦æŸ¥æ‰¾
 			String[] strings = null;
 			if(pIndex_next!=-1)
 				strings = CharsUtils.getProperty(cs,propertybeginIndex,indexs[m+1],childBegin,childEnd);
